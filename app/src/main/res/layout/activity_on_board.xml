@@ -12,11 +12,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/materialCardView4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ob_banner_all" />
+        app:srcCompat="@drawable/ob_banner_main" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView4"
@@ -43,7 +43,7 @@
                 android:layout_marginBottom="24dp"
                 android:clickable="true"
                 app:cardBackgroundColor="@color/secondary"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="50dp"
                 app:cardElevation="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="48dp"
                 android:alpha="0.5"
                 android:fontFamily="@font/poppins_medium"
                 android:text="We offer the latest styles and top-quality products, including food, groceries, electronics, and more, all in one place."
