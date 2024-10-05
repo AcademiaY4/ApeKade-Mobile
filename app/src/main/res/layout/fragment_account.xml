@@ -224,6 +224,7 @@
             app:iconGravity="textStart"
             app:cornerRadius="8dp" />
 
+
             <!-- Suggestions Button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSuggestions"
