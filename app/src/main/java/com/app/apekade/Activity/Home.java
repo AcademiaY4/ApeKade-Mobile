@@ -48,6 +48,8 @@ public class Home extends AppCompatActivity {
 
         replaceFrag(new IndexFragment());
 
+
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
@@ -71,6 +73,7 @@ public class Home extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
+
         Bundle bundle = new Bundle();
         bundle.putSerializable("user", "ds");
         fragment.setArguments(bundle);
@@ -78,4 +81,5 @@ public class Home extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
     }
+
 }
