@@ -39,7 +39,7 @@ public class PaymentFragment extends Fragment {
         radioMasterCard = view.findViewById(R.id.radio_master_card);
         radioVisaCard = view.findViewById(R.id.radio_visa_card);
         radioTerms = view.findViewById(R.id.terms);
-        submitButton = view.findViewById(R.id.csubmit);
+        submitButton = view.findViewById(R.id.cSubmit);
 
         // Set click listener for the submit button
         submitButton.setOnClickListener(v -> processPayment());

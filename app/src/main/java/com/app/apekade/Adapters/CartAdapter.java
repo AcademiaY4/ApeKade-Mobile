@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,44 +36,57 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         CartItem cartItem = cartItems.get(position);
-        holder.bind(cartItem);
+        holder.bind(cartItem); // Bind data to the view holder
+
+        // Set click listener to navigate to CartDetailFragment
         holder.itemView.setOnClickListener(v -> {
-            // Navigate to CartDetailFragment using replace to prevent fragment overlap
             CartDetailFragment detailFragment = CartDetailFragment.newInstance(cartItem);
             ((Home) context).getSupportFragmentManager().beginTransaction()
                     .replace(R.id.frame_layout, detailFragment)
                     .addToBackStack(null)
                     .commit();
         });
+
+        // Decrease quantity
+        holder.btnMinus.setOnClickListener(v -> {
+            if (cartItem.getQuantity() > 1) {
+                cartItem.setQuantity(cartItem.getQuantity() - 1); // Decrease quantity
+                holder.cartQuantityValue.setText(String.valueOf(cartItem.getQuantity()));
+                holder.cartPriceValue.setText("$" + (cartItem.getPrice() * cartItem.getQuantity())); // Update price
+            }
+        });
+
+        // Increase quantity
+        holder.btnPlus.setOnClickListener(v -> {
+            cartItem.setQuantity(cartItem.getQuantity() + 1); // Increase quantity
+            holder.cartQuantityValue.setText(String.valueOf(cartItem.getQuantity()));
+            holder.cartPriceValue.setText("$" + (cartItem.getPrice() * cartItem.getQuantity())); // Update price
+        });
     }
 
     @Override
     public int getItemCount() {
-        return cartItems.size();
+        return cartItems.size(); // Return the size of the cart items list
     }
 
     static class CartViewHolder extends RecyclerView.ViewHolder {
-        private final TextView productIdValue;
-        private final TextView quantityValue;
-        private final TextView priceValue;
+        private final TextView cartQuantityValue;
+        private final TextView cartPriceValue;
+        private final ImageButton btnMinus;
+        private final ImageButton btnPlus;
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
-            productIdValue = itemView.findViewById(R.id.cproduct_id_value);
-            quantityValue = itemView.findViewById(R.id.cproduct_quantity_value);
-            priceValue = itemView.findViewById(R.id.cproduct_price_value);
+            cartQuantityValue = itemView.findViewById(R.id.cart_quantity_value);
+            cartPriceValue = itemView.findViewById(R.id.cart_price_value);
+            btnMinus = itemView.findViewById(R.id.btn_minus);
+            btnPlus = itemView.findViewById(R.id.btn_plus);
         }
 
         public void bind(CartItem cartItem) {
-            if (productIdValue != null) {
-                productIdValue.setText(cartItem.getProductId() != null ? String.valueOf(cartItem.getProductId()) : "N/A");
-            }
-            if (quantityValue != null) {
-                quantityValue.setText(cartItem.getQuantity() > 0 ? String.valueOf(cartItem.getQuantity()) : "0");
-            }
-            if (priceValue != null) {
-                priceValue.setText(cartItem.getPrice() >= 0 ? String.valueOf(cartItem.getPrice()) : "N/A");
-            }
+            // Bind data from CartItem to UI elements
+            cartQuantityValue.setText(String.valueOf(cartItem.getQuantity()));
+            cartPriceValue.setText("$" + (cartItem.getPrice() * cartItem.getQuantity())); // Update price dynamically
         }
     }
 }
