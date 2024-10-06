@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <!-- Style for normal text -->
+    <style name="NormalTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <!-- Style for rounded ImageView -->
+<!--    <style name="roundedImageView">-->
+<!--        <item name="app:shapeAppearance">@style/ShapeAppearance.App.CornerSize</item>-->
+<!--    </style>-->
+</resources>

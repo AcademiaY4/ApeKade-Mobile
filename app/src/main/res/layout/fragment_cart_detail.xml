@@ -1,0 +1,169 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- App Logo -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_full"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Profile Icon -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_person_pin_24"
+        app:shapeAppearance="@style/roundedImageView"
+        app:layout_constraintEnd_toStartOf="@id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Notification Icon -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_notifications_24"
+        app:shapeAppearance="@style/roundedImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="8dp" />
+
+    <!-- Product Image -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/cImage_product"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Product Image"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Order ID Label -->
+    <TextView
+        android:id="@+id/order_id_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Order ID:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cImage_product" />
+
+    <TextView
+        android:id="@+id/cproduct_id_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order ID value"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_id_label" />
+
+    <!-- Product ID Label -->
+    <TextView
+        android:id="@+id/product_id_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Product ID:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cproduct_id_value" />
+
+    <TextView
+        android:id="@+id/cproduct_id_value2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product ID value"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_id_label" />
+
+    <!-- Quantity Label -->
+    <TextView
+        android:id="@+id/quantity_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Quantity:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cproduct_id_value2" />
+
+    <TextView
+        android:id="@+id/cproduct_quantity_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity value"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quantity_label" />
+
+    <!-- Price Label -->
+    <TextView
+        android:id="@+id/price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Price:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cproduct_quantity_value" />
+
+    <TextView
+        android:id="@+id/cproduct_price_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price value"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/price_label" />
+
+
+    <!-- Checkout Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCheckout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/bg_success"
+        android:text="Proceed to Checkout"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:cornerRadius="8dp"
+        app:icon="@drawable/baseline_payments_24"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

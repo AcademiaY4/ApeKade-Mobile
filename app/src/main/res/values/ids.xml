@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="status_label" type="id" />
+    <item name="price_label" type="id" />
+    <item name="product_id_value" type="id" />
+    <item name="product_id_label" type="id" />
+</resources>

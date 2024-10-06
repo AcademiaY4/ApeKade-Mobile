@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- Product Image -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_product"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" />
+
+        <!-- Order ID Label -->
+        <TextView
+            android:id="@+id/order_id_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/image_product"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/image_product"
+            android:text="Order ID:"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Order ID Value -->
+        <TextView
+            android:id="@+id/order_id_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/image_product"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/order_id_label"
+            android:text="488454656"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="normal" />
+
+
+
+        <TextView
+            android:id="@+id/quantity_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/order_id_label"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="23dp"
+            android:layout_toEndOf="@id/image_product"
+            android:text="Quantity:"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <ImageButton
+            android:id="@+id/btn_minus"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignBottom="@+id/quantity_label"
+            android:layout_marginStart="7dp"
+            android:layout_marginBottom="-5dp"
+            android:layout_toEndOf="@id/quantity_label"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Decrease Quantity"
+            android:padding="8dp"
+            android:src="@drawable/baseline_minimize_24"
+            app:tint="@color/primary" />
+
+        <TextView
+            android:id="@+id/cart_quantity_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/order_id_value"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="-45dp"
+            android:layout_toEndOf="@id/btn_minus"
+            android:text="2"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <ImageButton
+            android:id="@+id/btn_plus"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignBottom="@+id/btn_minus"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="-7dp"
+            android:layout_toEndOf="@id/cart_quantity_value"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Increase Quantity"
+            android:padding="1dp"
+            android:src="@drawable/baseline_add_24"
+            app:tint="@color/primary" />
+
+        <TextView
+            android:id="@+id/cart_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/order_id_label"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:text="$25.00"
+            android:textColor="@color/primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

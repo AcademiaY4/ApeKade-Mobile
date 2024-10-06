@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".Activity.Home">
 
+
+
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
@@ -15,7 +17,12 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
