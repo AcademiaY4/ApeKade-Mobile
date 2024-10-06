@@ -62,12 +62,12 @@
                 android:id="@+id/topic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:fontFamily="sans-serif-black"
                 android:text="@string/ecarddetails"
                 android:textColor="#000000"
-                android:layout_marginTop="50dp"
 
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/selecttopis"
@@ -76,12 +76,12 @@
                 android:layout_marginTop="12dp"
                 android:text="@string/selectpmethord"
                 android:textColor="#4A4242"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="180dp"
-                android:layout_height="70dp"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
                 app:srcCompat="@drawable/mastervisa" />
 
             <RadioGroup
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cardnumber"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/cnumber"
@@ -124,7 +124,7 @@
                 android:inputType="number"
                 android:padding="10dp"
                 android:textColorHint="#504040"
-                android:textSize="18dp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/name4"
@@ -133,7 +133,7 @@
                 android:layout_marginTop="15dp"
                 android:text="@string/nameoncard"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/cname"
@@ -146,7 +146,7 @@
                 android:inputType="textPersonName"
                 android:padding="10dp"
                 android:textColorHint="#504040"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -166,7 +166,7 @@
                         android:layout_marginTop="15dp"
                         android:text="@string/edate"
                         android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/cdate"
@@ -179,7 +179,7 @@
                         android:inputType="textPersonName"
                         android:padding="10dp"
                         android:textColorHint="#504040"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -195,7 +195,7 @@
                         android:layout_marginTop="15dp"
                         android:text="@string/ccvcode"
                         android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/ccvc"
@@ -222,16 +222,18 @@
                 android:layout_marginTop="20dp"
                 android:inputType="textVisiblePassword"
                 android:required="true"
-                android:text="@string/termscondi" />
+                android:text="@string/termscondi"
+                android:textSize="12sp" />
 
 
             <Button
                 android:id="@+id/csubmit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#E5AC00"
+                android:background="#28a745"
                 android:text="@string/paynow"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
 
 
         </LinearLayout>

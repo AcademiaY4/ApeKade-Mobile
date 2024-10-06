@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import com.app.apekade.R;
 public class CartDetailFragment extends Fragment {
 
     private static final String ARG_CART_ITEM = "cart_item";
+    private Button btnCheckout;
 
     public static CartDetailFragment newInstance(CartItem cartItem) {
         CartDetailFragment fragment = new CartDetailFragment();
@@ -32,6 +34,9 @@ public class CartDetailFragment extends Fragment {
         // Retrieve the cart item from arguments
         CartItem cartItem = (CartItem) getArguments().getSerializable(ARG_CART_ITEM);
 
+        // Initialize the checkout button
+        btnCheckout = view.findViewById(R.id.btnCheckout2);
+
         // Initialize TextViews with cart item details
         TextView productIdTextView = view.findViewById(R.id.cproduct_id_value);
         TextView quantityTextView = view.findViewById(R.id.cproduct_quantity_value);
@@ -47,6 +52,20 @@ public class CartDetailFragment extends Fragment {
 //        Glide.with(view.getContext())
 //                .load(cartItem.getImageUrl()) // Assuming CartItem has getImageUrl() method
 //                .into(productImageView);
+
+
+        // Set an onClickListener on the checkout button to navigate to payment
+        btnCheckout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Replace the current fragment with the PaymentFragment
+                PaymentFragment paymentFragment = new PaymentFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame_layout, paymentFragment) // Assuming 'fragment_container' is the ID of your fragment container
+                        .addToBackStack(null) // Optional: adds this transaction to the back stack
+                        .commit();
+            }
+        });
 
         return view;
     }
