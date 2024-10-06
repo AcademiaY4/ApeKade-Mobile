@@ -1,14 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.OrderFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:padding="16dp">
 
+        <!-- Logo Image -->
+        <ImageView
+            android:id="@+id/logo_image_view"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_full"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Notification Icon -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/notification_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:alpha="0.7"
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_notifications_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/profile_icon"
+            app:layout_constraintTop_toTopOf="@+id/logo_image_view"
+            app:shapeAppearance="@style/roundedImageView" />
+
+        <!-- Profile Icon -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:alpha="0.7"
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_person_pin_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/logo_image_view"
+            app:shapeAppearance="@style/roundedImageView" />
+
+        <!-- Orders Header Text -->
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="My All Orders"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_image_view" />
+
+        <!-- RecyclerView for Orders -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orders_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:clipToPadding="false"
+            android:paddingTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/header_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="LinearLayoutManager" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
