@@ -1,4 +1,4 @@
-package com.app.apekade.Fragment;
+package com.app.apekade;
 
 import android.os.Bundle;
 
@@ -8,14 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.apekade.R;
-
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link OrderItemFragment#newInstance} factory method to
+ * Use the {@link CartItemFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OrderItemFragment extends Fragment {
+public class CartItemFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +24,7 @@ public class OrderItemFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public OrderItemFragment() {
+    public CartItemFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +34,11 @@ public class OrderItemFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment OrderItemFragment.
+     * @return A new instance of fragment CartItemFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static OrderItemFragment newInstance(String param1, String param2) {
-        OrderItemFragment fragment = new OrderItemFragment();
+    public static CartItemFragment newInstance(String param1, String param2) {
+        CartItemFragment fragment = new CartItemFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +59,6 @@ public class OrderItemFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order_item, container, false);
+        return inflater.inflate(R.layout.fragment_cart_item, container, false);
     }
 }

@@ -33,7 +33,7 @@
             android:alpha="0.5"
             android:scaleType="centerCrop"
             android:src="@drawable/baseline_notifications_24"
-            app:layout_constraintBottom_toTopOf="@+id/rvCartItems"
+            app:layout_constraintBottom_toTopOf="@+id/carts_recycler_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.613"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -50,7 +50,7 @@
             android:alpha="0.5"
             android:scaleType="centerCrop"
             android:src="@drawable/baseline_person_pin_24"
-            app:layout_constraintBottom_toTopOf="@+id/rvCartItems"
+            app:layout_constraintBottom_toTopOf="@+id/carts_recycler_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.431"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -58,20 +58,22 @@
             app:layout_constraintVertical_bias="0.236"
             app:shapeAppearance="@style/roundedImageView" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvCartItems"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="46dp"
-            android:clipToPadding="false"
-            android:padding="8dp"
-            android:scrollbars="vertical"
-            app:layout_constraintBottom_toTopOf="@id/cartSummaryCard"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView2" />
-
         <!-- Cart Summary Card -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/carts_recycler_view"
+            android:layout_width="373dp"
+            android:layout_height="409dp"
+            android:clipToPadding="false"
+            android:paddingTop="50dp"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/cartSummaryCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.421"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.86" />
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cartSummaryCard"
             android:layout_width="0dp"

@@ -2,9 +2,9 @@ package com.app.apekade.Model;
 
 import java.io.Serializable;
 
-// Order.java
+
 public class Order implements Serializable { // Make it Serializable
-    private int orderId; // Order ID
+    private int orderId;
     private String name;
     private int quantity;
     private double price;
