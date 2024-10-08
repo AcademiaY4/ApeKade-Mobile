@@ -44,6 +44,10 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.cardview.v7)
+    implementation (libs.converter.gson)
+    implementation (libs.retrofit)
+    implementation (libs.logging.interceptor)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

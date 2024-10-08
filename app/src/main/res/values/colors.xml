@@ -13,6 +13,8 @@
     <color name="bg_success">#28a745</color>
     <color name="material_outline">#DEDEDE</color>
 
+    <!--    material input color-->
+    <color name="material_input_bg">#E0E0E0</color>
 
     <!--shimmer colors    -->
     <color name="shimmerLight">#E5E7EB</color>
