@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.app.apekade.Fragment.AccountFragment;
 import com.app.apekade.Fragment.CartFragment;
 import com.app.apekade.Fragment.IndexFragment;
 import com.app.apekade.Fragment.OrderFragment;
@@ -48,11 +47,13 @@ public class Home extends AppCompatActivity {
 
         replaceFrag(new IndexFragment());
 
+
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == PROFILE_ID) {
-                replaceFrag(new AccountFragment());
+                replaceFrag(new IndexFragment());
             } else if (itemId == HOME_ID) {
                 replaceFrag(new IndexFragment());
             } else if (itemId == ORDERS_ID) {
@@ -71,6 +72,7 @@ public class Home extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
+
         Bundle bundle = new Bundle();
         bundle.putSerializable("user", "ds");
         fragment.setArguments(bundle);
@@ -78,4 +80,7 @@ public class Home extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
     }
+
+
+
 }
