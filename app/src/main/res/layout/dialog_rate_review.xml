@@ -104,7 +104,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/commentBox"
+                android:id="@+id/editTextComment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
@@ -113,7 +113,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/submitFeedbackButton"
+            android:id="@+id/btnSubmitFeedback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submit Feedback"

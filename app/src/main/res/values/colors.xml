@@ -13,6 +13,8 @@
     <color name="bg_success">#28a745</color>
     <color name="material_outline">#DEDEDE</color>
 
+    <!--    material input color-->
+    <color name="material_input_bg">#E0E0E0</color>
 
     <!--shimmer colors    -->
     <color name="shimmerLight">#E5E7EB</color>
@@ -21,4 +23,12 @@
 
     <color name="cardBorder">#80EFEFEF</color>
     <color name="cardBorderText">#7A7A7A</color>
+
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#4CAF50</color>
+    <color name="colorBackground">#F5F5F5</color>
+    <color name="colorText">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorDivider">#BDBDBD</color>
 </resources>
