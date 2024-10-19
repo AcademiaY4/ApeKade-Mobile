@@ -1,4 +1,4 @@
-package com.app.apekade.Model.Dto;
+package com.app.apekade.Model.Dto.AuthDto;
 
 import com.app.apekade.Model.User;
 

@@ -35,7 +35,10 @@ public class OnBoard extends AppCompatActivity {
         cvGetStartedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Login.class));
+                Intent intent = new Intent(OnBoard.this, Login.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
             }
         });
         // Check if user is already logged in
@@ -43,7 +46,7 @@ public class OnBoard extends AppCompatActivity {
             // Navigate to Home activity if the token is valid
             Intent intent = new Intent(OnBoard.this, Home.class);
             startActivity(intent);
-            finish();  // Finish the OnBoard activity so it won't be accessible if the user is logged in
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         }
     }
 }

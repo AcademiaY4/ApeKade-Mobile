@@ -1,6 +1,4 @@
-package com.app.apekade.Model.Dto;
-
-import com.app.apekade.Model.User;
+package com.app.apekade.Model.Dto.AuthDto;
 
 public class LoginDto {
     private String email;

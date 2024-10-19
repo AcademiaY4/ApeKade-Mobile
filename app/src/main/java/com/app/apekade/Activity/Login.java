@@ -1,27 +1,24 @@
 package com.app.apekade.Activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowInsetsController;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.cardview.widget.CardView;
 
 import com.app.apekade.Components.ProgressLoader.ProgressLoader;
-import com.app.apekade.Model.Dto.LoginDto;
-import com.app.apekade.Model.Dto.LoginResDto;
-import com.app.apekade.Model.Dto.ServerStatus;
+import com.app.apekade.Model.Dto.AuthDto.LoginDto;
+import com.app.apekade.Model.Dto.AuthDto.LoginResDto;
 import com.app.apekade.Model.Response.ApiRes;
 import com.app.apekade.R;
 import com.app.apekade.Service.Auth.AuthService;
@@ -31,7 +28,6 @@ import com.app.apekade.Utils.StatusBarUtil;
 import com.app.apekade.Utils.UserObjUtil;
 import com.app.apekade.Utils.Validation.Schema.SignInForm;
 import com.app.apekade.Utils.Validation.Validator.SignInValidator;
-import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -86,7 +82,7 @@ public class Login extends AppCompatActivity {
             RetrofitService retrofitService = new RetrofitService();
             AuthService authService = retrofitService.getRetrofit().create(AuthService.class);
 
-            Call<ApiRes<LoginResDto>> call = authService.login(new LoginDto(email, password,"ADMIN"));
+            Call<ApiRes<LoginResDto>> call = authService.login(new LoginDto(email, password,"BUYER"));
             call.enqueue(new Callback<ApiRes<LoginResDto>>() {
                 @Override
                 public void onResponse(Call<ApiRes<LoginResDto>> call, Response<ApiRes<LoginResDto>> response) {
@@ -100,9 +96,10 @@ public class Login extends AppCompatActivity {
                             UserObjUtil.saveUser(Login.this, loginResDto.getUser());
 
                             // Start Home Activity
-                            Intent intent = new Intent(Login.this, Home.class);
-                            startActivity(intent);
                             progressLoader.dismissProgressLoader();
+                            Intent intent = new Intent(Login.this, Home.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
                             finish();
                         } else {
                             // Check if the message is null

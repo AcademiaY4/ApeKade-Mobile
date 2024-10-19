@@ -22,7 +22,7 @@
             android:layout_height="match_parent">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cvEditProBtn"
+                android:id="@+id/cvMyActDltProBtn"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -36,7 +36,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cvEditBackBtn"
+                app:layout_constraintStart_toEndOf="@+id/cvMyActBackBtn"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,7 +64,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cvEditBackBtn"
+                android:id="@+id/cvMyActBackBtn"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -74,7 +74,7 @@
                 app:cardCornerRadius="50dp"
                 app:cardElevation="2dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cvEditProBtn"
+                app:layout_constraintEnd_toStartOf="@+id/cvMyActDltProBtn"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
