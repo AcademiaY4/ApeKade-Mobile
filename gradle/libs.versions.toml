@@ -9,6 +9,8 @@ activity = "1.9.2"
 constraintlayout = "2.1.4"
 cardviewV7 = "28.0.0"
 navigationRuntime = "2.8.2"
+volley = "1.2.1"
+mediationTestSuite = "3.0.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -20,6 +22,8 @@ activity = { group = "androidx.activity", name = "activity", version.ref = "acti
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 cardview-v7 = { group = "com.android.support", name = "cardview-v7", version.ref = "cardviewV7" }
 navigation-runtime = { group = "androidx.navigation", name = "navigation-runtime", version.ref = "navigationRuntime" }
+volley = { group = "com.android.volley", name = "volley", version.ref = "volley" }
+mediation-test-suite = { group = "com.google.android.ads", name = "mediation-test-suite", version.ref = "mediationTestSuite" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

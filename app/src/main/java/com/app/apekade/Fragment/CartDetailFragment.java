@@ -1,5 +1,20 @@
 package com.app.apekade.Fragment;
 
+/**
+ * CartDetailFragment.java
+ *
+ * Description: This fragment displays the user's shopping cart and allows the user to
+ * view their selected products, modify quantities, and proceed to checkout.
+ *
+ * Created by: ChalaniS
+ * Date: 2024/10/02
+ *
+ * Modifications:
+ * - Modification 1: Add sample items
+ *
+ * License: This file is part of the e-commerce mobile application project.
+ */
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
